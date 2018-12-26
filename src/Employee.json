@@ -64,6 +64,13 @@
       "username": "paznar",
       "password": "test123",
       "id": 4
+    },
+    {
+      "firstName": "Gaston",
+      "lastName": "test",
+      "username": "gtest",
+      "password": "asd123",
+      "id": 5
     }
   ]
 }

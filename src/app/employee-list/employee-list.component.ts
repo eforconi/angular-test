@@ -41,21 +41,16 @@ export class EmployeeListComponent implements OnInit {
   public  getEmployees(){
     this.apiService.getEmployees().subscribe((employees:  Employee[]) => {
         this.employees  =  employees;
-        console.log(employees);
     });
   }
 
   logOut(){
-    console.log('log: ',this.api.isLogged() );
     this.api.logOut();
-    console.log('log: ',this.api.isLogged() );
   }
 
   public deleteEmployee(employee){
 
-  console.log('log: ',employee );
   this.apiService.deleteEmployee(employee.id).subscribe((response)=> {
-    console.log(response);
     window.location.reload();
     });
   }  

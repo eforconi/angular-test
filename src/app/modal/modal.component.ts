@@ -24,21 +24,17 @@ export class NgbdModalBasic {
     
     this.submitted = true;
     this.editEmployee(this.childMessage);
-    console.log("model",this.model);
 
   }
 
   editEmployee(childMessage){
-    console.log('employeeId; ', this.childMessage.id);
     return this.apiService.editEmployee(this.childMessage,this.childMessage.id).subscribe((response)=>
     {
-      console.log('Employee', this.childMessage);
       window.location.reload();
     });
   }
 
   open(content) {
-    console.log("modal comp id", this.childMessage);
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
