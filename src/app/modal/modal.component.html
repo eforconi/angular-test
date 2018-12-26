@@ -1,0 +1,40 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name"
+            required
+            [(ngModel)]="childMessage.name" name="name">
+            </div>
+      
+          <div class="form-group">
+            <label for="city">Ciudad</label>
+            <input type="text" class="form-control" id="city"
+            [(ngModel)]="childMessage.city" name="city">
+          </div>
+      
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="text" class="form-control" id="gender"
+            [(ngModel)]="childMessage.gender" name="gender">
+          </div>
+      
+          <div class="form-group">
+            <label for="department">Department</label>
+            <input type="text" class="form-control" id="department"
+            [(ngModel)]="childMessage.department" name="department">
+          </div>
+      
+          <button class="btn btn-success" (click)="onSubmit(); editForm.reset()">Submit</button>
+        </form>
+  </div>
+</ng-template>
+
+<button class="btn btn-primary" (click)="open(content)">edit</button>

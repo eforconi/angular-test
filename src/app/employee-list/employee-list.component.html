@@ -1,0 +1,36 @@
+<br>
+<button type="submit" class="btn btn-primary" (click)="logOut()">Logout</button>
+
+<br><br>
+
+<button class="btn btn-link"><a [routerLink]="'/employees'"> Employee List </a></button>
+<button class="btn btn-link"><a [routerLink]="'/create-employee'"> Create Employee </a></button>
+
+<br><br>
+Filter by department
+<input type="text" id="inputDepartment" class="form-control" placeholder="Department" [(ngModel)]="searchText">
+<br>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees | employeeDepartmentFilter : searchText">
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.city}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.department}}</td>
+            <td><button type="submit" class="btn btn-primary" (click)="deleteEmployee(employee)" >delete</button></td>
+            <td><ngbd-modal-basic [childMessage]="employee"></ngbd-modal-basic></td>
+        </tr>
+    </tbody>
+</table>
