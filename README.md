@@ -13,7 +13,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Install json-server 
 `npm install -g json-server`.
 
-Start it rom the command line in the project root folder 
+Start it from the command line in the project root folder 
 `json-server --watch ./src/Employee.json`
 
 ## Development server
