@@ -16,17 +16,12 @@ export class LoginService {
   private modals: any[] = [];
 
   login():any{
-    // return this.httpClient.post<LoginResultModel>(`${this.API_URL}/login`, {
-    //   email: email,
-    //   password: password
-    // });
     return this.httpClient.get(`${this.API_URL}/login`);
   }
   
   logOut(){
     localStorage.removeItem('currentUser');
     window.location.reload();
-    
   }
 
   setUser(user): void {

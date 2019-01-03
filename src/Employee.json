@@ -22,13 +22,6 @@
       "department": "Web"
     },
     {
-      "name": "Magali",
-      "city": "Ordonez",
-      "gender": "female",
-      "department": "kitchen",
-      "id": 4
-    },
-    {
       "department": "DB",
       "id": 8,
       "name": "Adelqui",
@@ -71,6 +64,13 @@
       "username": "gtest",
       "password": "asd123",
       "id": 5
+    },
+    {
+      "firstName": "Tomas",
+      "lastName": "Baigo",
+      "username": "tbaigo",
+      "password": "asd123",
+      "id": 6
     }
   ]
 }

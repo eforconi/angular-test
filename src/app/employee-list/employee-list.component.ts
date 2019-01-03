@@ -21,15 +21,14 @@ export class EmployeeListComponent implements OnInit {
     private department: string;
     closeResult: string;
     model = new Employee();
+    private bodyText: string;
 
 
 
   constructor(private  apiService:  ApiService, private api: LoginService,
     private modalService: ModalService) {  
     this.employees = [];
-
   }
-  private bodyText: string;
 
   
     ngOnInit() {

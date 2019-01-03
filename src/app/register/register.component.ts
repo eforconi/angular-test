@@ -32,15 +32,12 @@ export class RegisterComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-        console.log("form:", this.registerForm.value)
         // stop here if form is invalid
         if (this.registerForm.invalid) {
             return;
         }
-
         this.loading = true;
         this.loginService.register(this.registerForm.value)
-            .pipe(first())
             .subscribe(
                 data => {
                     this.alertService.success('Registration successful', true);

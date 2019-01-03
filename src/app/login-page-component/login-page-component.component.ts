@@ -16,11 +16,9 @@ export class LoginPageComponent implements OnInit {
   constructor(private api: LoginService,  private router: Router,private modalService: ModalService) {
   }
 
-  private bodyText: string;
 
   
     ngOnInit() {
-        this.bodyText = 'This text can be updated in modal 1';
     }
 
     openModal(id: string) {
@@ -36,15 +34,11 @@ export class LoginPageComponent implements OnInit {
         r => {
           for(let user of r){
 
-            if(this.user === user.username && this.password==user.password){
+            if(this.user === user.username && this.password === user.password){
               this.api.setUser(user);
               this.router.navigateByUrl('/employees');
             }
           }
-          // if (r.token) {
-          //   this.api.setToken(r.token);
-          //   this.router.navigateByUrl('/employees');
-          // }
         },
         r => {
           alert(r.error.error);
